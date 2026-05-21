@@ -1,0 +1,41 @@
+/*
+  Heaven------Garden
+                |
+                |
+           Workspace-----Laboratory
+                           |
+                           |
+                Lab-------Entrance
+*/
+[States]
+Entrance
+Lab
+Laboratory
+Workspace
+Garden
+Heaven
+End
+[Sigma]
+N
+S
+E
+V
+End
+[Rules]
+Entrance, N, Laboratory
+Entrance, V, Lab
+Lab, E, Entrance
+Laboratory, S, Entrance
+Laboratory, V, Workspace
+Workspace, E, Laboratory
+Workspace, N, Garden
+Garden, S, Workspace
+Garden, V, Heaven
+Heaven, E, Garden
+End
+[Start]
+Entrance
+End
+[Accept]
+Heaven
+End

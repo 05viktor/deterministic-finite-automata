@@ -1,0 +1,60 @@
+/*
+  Heaven------Garden
+                |
+                |
+           Workspace-----Laboratory
+                           |
+                           |
+                Lab-------Entrance
+*/
+[States]
+Entrance_NoPotion
+Entrance_WithPotion
+Lab_NoPotion
+Lab_WithPotion
+Laboratory_NoPotion
+Laboratory_WithPotion
+Workspace_NoPotion
+Workspace_WithPotion
+Garden_NoPotion
+Garden_WithPotion
+Heaven_NoPotion
+Heaven_WithPotion
+End
+[Sigma]
+N
+S
+E
+V
+P
+End
+[Rules]
+Entrance_NoPotion, N, Laboratory_NoPotion
+Entrance_NoPotion, V, Lab_NoPotion
+Lab_NoPotion, E, Entrance_NoPotion
+Lab_NoPotion, P, Lab_WithPotion
+Laboratory_NoPotion, S, Entrance_NoPotion
+Laboratory_NoPotion, V, Workspace_NoPotion
+Workspace_NoPotion, E, Laboratory_NoPotion
+Workspace_NoPotion, N, Garden_NoPotion
+Garden_NoPotion, S, Workspace_NoPotion
+Garden_NoPotion, V, Heaven_NoPotion
+Heaven_NoPotion, E, Garden_NoPotion
+Entrance_WithPotion, N, Laboratory_WithPotion
+Entrance_WithPotion, V, Lab_WithPotion
+Lab_WithPotion, E, Entrance_WithPotion
+Lab_WithPotion, P, Lab_WithPotion
+Laboratory_WithPotion, S, Entrance_WithPotion
+Laboratory_WithPotion, V, Workspace_WithPotion
+Workspace_WithPotion, E, Laboratory_WithPotion
+Workspace_WithPotion, N, Garden_WithPotion
+Garden_WithPotion, S, Workspace_WithPotion
+Garden_WithPotion, V, Heaven_WithPotion
+Heaven_WithPotion, E, Garden_WithPotion
+End
+[Start]
+Entrance_NoPotion
+End
+[Accept]
+Heaven_WithPotion
+End

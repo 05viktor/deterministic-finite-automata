@@ -1,0 +1,97 @@
+[States]
+Entrance_NoKey_NoPotion
+Entrance_WithKey_NoPotion
+Entrance_WithKey_WithPotion
+
+Lab_NoKey_NoPotion
+Lab_WithKey_NoPotion
+Lab_WithKey_WithPotion
+
+Laboratory_NoKey_NoPotion
+Laboratory_WithKey_NoPotion
+Laboratory_WithKey_WithPotion
+
+Workspace_NoKey_NoPotion
+Workspace_WithKey_NoPotion
+Workspace_WithKey_WithPotion
+
+Garden_NoKey_NoPotion
+Garden_WithKey_NoPotion
+Garden_WithKey_WithPotion
+
+Heaven_NoKey_NoPotion
+Heaven_WithKey_NoPotion
+Heaven_WithKey_WithPotion
+End
+
+[Sigma]
+N
+S
+E
+V
+K
+P
+End
+
+[Rules]
+Entrance_NoKey_NoPotion, N, Laboratory_NoKey_NoPotion
+Entrance_NoKey_NoPotion, V, Lab_NoKey_NoPotion
+
+Lab_NoKey_NoPotion, E, Entrance_NoKey_NoPotion
+
+Laboratory_NoKey_NoPotion, S, Entrance_NoKey_NoPotion
+Laboratory_NoKey_NoPotion, V, Workspace_NoKey_NoPotion
+Laboratory_NoKey_NoPotion, K, Laboratory_WithKey_NoPotion
+
+Workspace_NoKey_NoPotion, E, Laboratory_NoKey_NoPotion
+Workspace_NoKey_NoPotion, N, Garden_NoKey_NoPotion
+
+Garden_NoKey_NoPotion, S, Workspace_NoKey_NoPotion
+Garden_NoKey_NoPotion, V, Heaven_NoKey_NoPotion
+
+Heaven_NoKey_NoPotion, E, Garden_NoKey_NoPotion
+
+Entrance_WithKey_NoPotion, N, Laboratory_WithKey_NoPotion
+Entrance_WithKey_NoPotion, V, Lab_WithKey_NoPotion
+
+Lab_WithKey_NoPotion, E, Entrance_WithKey_NoPotion
+Lab_WithKey_NoPotion, P, Lab_WithKey_WithPotion
+
+Laboratory_WithKey_NoPotion, S, Entrance_WithKey_NoPotion
+Laboratory_WithKey_NoPotion, V, Workspace_WithKey_NoPotion
+Laboratory_WithKey_NoPotion, K, Laboratory_WithKey_NoPotion
+
+Workspace_WithKey_NoPotion, E, Laboratory_WithKey_NoPotion
+Workspace_WithKey_NoPotion, N, Garden_WithKey_NoPotion
+
+Garden_WithKey_NoPotion, S, Workspace_WithKey_NoPotion
+Garden_WithKey_NoPotion, V, Heaven_WithKey_NoPotion
+
+Heaven_WithKey_NoPotion, E, Garden_WithKey_NoPotion
+
+Entrance_WithKey_WithPotion, N, Laboratory_WithKey_WithPotion
+Entrance_WithKey_WithPotion, V, Lab_WithKey_WithPotion
+
+Lab_WithKey_WithPotion, E, Entrance_WithKey_WithPotion
+Lab_WithKey_WithPotion, P, Lab_WithKey_WithPotion
+
+Laboratory_WithKey_WithPotion, S, Entrance_WithKey_WithPotion
+Laboratory_WithKey_WithPotion, V, Workspace_WithKey_WithPotion
+Laboratory_WithKey_WithPotion, K, Laboratory_WithKey_WithPotion
+
+Workspace_WithKey_WithPotion, E, Laboratory_WithKey_WithPotion
+Workspace_WithKey_WithPotion, N, Garden_WithKey_WithPotion
+
+Garden_WithKey_WithPotion, S, Workspace_WithKey_WithPotion
+Garden_WithKey_WithPotion, V, Heaven_WithKey_WithPotion
+
+Heaven_WithKey_WithPotion, E, Garden_WithKey_WithPotion
+End
+
+[Start]
+Entrance_NoKey_NoPotion
+End
+
+[Accept]
+Heaven_WithKey_WithPotion
+End
